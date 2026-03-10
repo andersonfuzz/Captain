@@ -32,3 +32,6 @@
 /workspaces/Captain/obj/Debug/net10.0/Captain.pdb
 /workspaces/Captain/obj/Debug/net10.0/Captain.genruntimeconfig.cache
 /workspaces/Captain/obj/Debug/net10.0/ref/Captain.dll
+/workspaces/Captain/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.dll
+/workspaces/Captain/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/workspaces/Captain/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.InMemory.dll
