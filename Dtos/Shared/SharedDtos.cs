@@ -1,4 +1,4 @@
-namespace Captain.Dtos;
+namespace Captain.Dtos.Shared;
 
 public record AddressDto(
     string Road,

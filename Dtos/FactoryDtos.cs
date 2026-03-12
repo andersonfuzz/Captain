@@ -1,3 +1,5 @@
+using Captain.Dtos.Shared;
+
 namespace Captain.Dtos;
 
 public record CreateFactoryRequest(

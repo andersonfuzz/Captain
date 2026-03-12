@@ -23,4 +23,13 @@ public class Customer
         Address = address;
         Contact = contact;
     }
+
+    public void Update(string companyName, string fantasy, string stateRegistration, Address address, Contact contact)
+    {
+        CompanyName = companyName;
+        Fantasy = fantasy;
+        StateRegistration = stateRegistration;
+        Address = address;
+        Contact = contact;
+    }
 }

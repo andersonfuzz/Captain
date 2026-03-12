@@ -23,3 +23,9 @@ public record ListResponse(
     string FactoryName,
     List<ItemDto> Items
 );
+
+public record CreateItemRequest(
+    string Name,
+    string Description,
+    decimal Price
+);

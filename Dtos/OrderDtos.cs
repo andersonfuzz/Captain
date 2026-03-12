@@ -28,3 +28,6 @@ public record OrderResponse(
     List<ItemOrderResponse> Items,
     DateTime CreatedAt
 );
+public record UpdateOrderRequest(
+    List<ItemOrderDto> Items
+);

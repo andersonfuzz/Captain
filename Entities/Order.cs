@@ -1,3 +1,5 @@
+using Captain.Dtos;
+
 namespace Captain.Entities;
 
 public class Order
@@ -10,7 +12,9 @@ public class Order
     public Guid FactoryId { get; private set; }
     public Factory Factory { get; private set; } = null!;
 
-    public List<Item> Items { get; private set; } = new();
+    public List<OrderItem> Items { get; private set; } = new();
+
+    public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
 
     protected Order() { }
 
@@ -18,5 +22,21 @@ public class Order
     {
         CustomerId = customerId;
         FactoryId = factoryId;
+    }
+
+    public void AddItem(Item item, int quantity)
+    {
+        var orderItem = new OrderItem(Id, item.Id, quantity, item.Price);
+        Items.Add(orderItem);
+    }
+
+    public void UpdateItems(IEnumerable<Item> items, IEnumerable<ItemOrderDto> itemRequests)
+    {
+        Items.Clear();
+        foreach (var itemRequest in itemRequests)
+        {
+            var item = items.First(i => i.Id == itemRequest.ItemId);
+            AddItem(item, itemRequest.Quantity);
+        }
     }
 }

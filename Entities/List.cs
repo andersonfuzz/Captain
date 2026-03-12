@@ -18,4 +18,14 @@ public class List
         Name = name;
         FactoryId = factoryId;
     }
+
+    public void Update(string name)
+    {
+        Name = name;
+    }
+    public void AddItem(string name, string description, decimal price)
+    {
+        var item = new Item(name, description, price, FactoryId);
+        Items.Add(item);
+    }
 }
