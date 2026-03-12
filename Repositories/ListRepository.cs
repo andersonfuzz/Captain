@@ -32,17 +32,16 @@ public class ListRepository : IListRepository
             .FirstOrDefaultAsync(l => l.Id == id);
     }
 
-    public async Task<Entities.List> AddAsync(Entities.List list)
-    {
-        _context.Lists.Add(list);
-        await _context.SaveChangesAsync();
+ public async Task<Entities.List> AddAsync(Entities.List list)
+{
+    _context.Lists.Add(list);
+    await _context.SaveChangesAsync();
 
-        await _context.Entry(list)
-            .Reference(l => l.Factory)
-            .LoadAsync();
-
-        return list;
-    }
+    return await _context.Lists
+        .Include(l => l.Factory)
+        .Include(l => l.Items)
+        .FirstAsync(l => l.Id == list.Id);
+}
 
     public async Task<Entities.List> UpdateAsync(Entities.List list)
     {

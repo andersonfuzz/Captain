@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseInMemoryDatabase("CaptainDb"));
+    options.UseSqlite("Data Source=captain.db"));
 
 // Repositories
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
